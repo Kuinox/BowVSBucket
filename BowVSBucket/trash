@@ -1,0 +1,43 @@
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.event.block.BlockFromToEvent;
+
+/*		if (bf.getType()==Material.WATER ){
+			Bukkit.broadcastMessage("BF Water checked");
+		}
+		if (b.getType()==Material.WATER ){
+			Bukkit.broadcastMessage("B Water checked");
+		}
+		if (bf.getData()==1 ){
+			Bukkit.broadcastMessage("BF data=1 checked");
+		}
+		if (b.getData()==0){
+			Bukkit.broadcastMessage("BF data=1 checked");
+		}
+		*/
+		if (bf.getType()==Material.WATER && bf.getData()==1){
+			Bukkit.broadcastMessage("Canceled");
+			e.setCancelled(true);String x =String.valueOf(e.getToBlock().getX());
+			String y= String.valueOf(e.getToBlock().getY());
+			String z= String.valueOf(e.getToBlock().getZ());
+			String x2 =String.valueOf(e.getBlock().getX());
+			String y2= String.valueOf(e.getBlock().getY());
+			String z2= String.valueOf(e.getBlock().getZ());
+			Bukkit.broadcastMessage("To block: "+x+" "+y+" "+z+" "+e.getToBlock().getData()+e.getToBlock().getType());
+			Bukkit.broadcastMessage("From block: "+x2+" "+y2+" "+z2+" "+e.getBlock().getData()+e.getBlock().getType());
+			Bukkit.broadcastMessage("______________________");
+			
+		}else{
+			Bukkit.broadcastMessage("Not Canceled");
+			String x =String.valueOf(e.getToBlock().getX());
+			String y= String.valueOf(e.getToBlock().getY());
+			String z= String.valueOf(e.getToBlock().getZ());
+			String x2 =String.valueOf(e.getBlock().getX());
+			String y2= String.valueOf(e.getBlock().getY());
+			String z2= String.valueOf(e.getBlock().getZ());
+			Bukkit.broadcastMessage("To block: "+x+" "+y+" "+z+" "+e.getToBlock().getData()+e.getToBlock().getType());
+			Bukkit.broadcastMessage("From block: "+x2+" "+y2+" "+z2+" "+e.getBlock().getData()+e.getBlock().getType());
+			Bukkit.broadcastMessage("______________________");
+		}
+// try of disable infinite water
